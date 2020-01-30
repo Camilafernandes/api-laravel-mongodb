@@ -8,7 +8,10 @@
         "php": ">=5.5.9",
         "laravel/framework": "5.2.*",
         "mongodb/mongodb": "^1.5",
-        "jenssegers/mongodb": "2.3"
+        "jenssegers/mongodb": "2.3",
+        "darkaonline/l5-swagger": "~3.0",
+        "waavi/sanitizer": "1.0.5",
+        "ellipsesynergie/api-response": "^0.16.0"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",

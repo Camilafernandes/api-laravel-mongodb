@@ -1,0 +1,435 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "title": "API Laravel",
+        "version": "1.0.0"
+    },
+    "basePath": "/api/v1/",
+    "schemes": [
+        "http",
+        "https"
+    ],
+    "paths": {
+        "/dentist": {
+            "get": {
+                "tags": [
+                    "dentist"
+                ],
+                "summary": "Listagem de Usu\u00e1rios.",
+                "responses": {
+                    "200": {
+                        "description": "Registros encontrados."
+                    },
+                    "404": {
+                        "description": "Registros n\u00e3o encontrado."
+                    },
+                    "500": {
+                        "description": "Erro ao processar requisi\u00e7\u00e3o."
+                    }
+                }
+            },
+            "put": {
+                "tags": [
+                    "dentist"
+                ],
+                "summary": "Altera\u00e7\u00e3o de Usu\u00e1rio.",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "header",
+                        "description": "Id de Usu\u00e1rio",
+                        "required": true,
+                        "type": "integer"
+                    },
+                    {
+                        "name": "name",
+                        "in": "formData",
+                        "description": "Nome",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "email",
+                        "in": "formData",
+                        "description": "Email",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "cpf",
+                        "in": "formData",
+                        "description": "CPF",
+                        "required": true,
+                        "type": "integer"
+                    },
+                    {
+                        "name": "gender",
+                        "in": "formData",
+                        "description": "Sexo",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "date_of_birth",
+                        "in": "formData",
+                        "description": "Data de anivers\u00e1rio",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "rg",
+                        "in": "formData",
+                        "description": "RG",
+                        "required": true,
+                        "type": "integer"
+                    },
+                    {
+                        "name": "agency",
+                        "in": "formData",
+                        "description": "Ag\u00eancia",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "marital_status",
+                        "in": "formData",
+                        "description": "Estado Civil",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "nationality",
+                        "in": "formData",
+                        "description": "Nacionalidade",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "place_of_birth",
+                        "in": "formData",
+                        "description": "Estado de Nascimento",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "occupation",
+                        "in": "formData",
+                        "description": "Profiss\u00e3o",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "postcode",
+                        "in": "formData",
+                        "description": "CEP",
+                        "required": true,
+                        "type": "integer"
+                    },
+                    {
+                        "name": "address",
+                        "in": "formData",
+                        "description": "Endere\u00e7o",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "number",
+                        "in": "formData",
+                        "description": "N\u00famero",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "secondary_address",
+                        "in": "formData",
+                        "description": "Complemento",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "country",
+                        "in": "formData",
+                        "description": "Pa\u00eds",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "city",
+                        "in": "formData",
+                        "description": "Cidade",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "state",
+                        "in": "formData",
+                        "description": "Estado",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "contact",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "properties": {
+                                "type": {
+                                    "description": "Digite o tipo de contato (celular, casa e etc)",
+                                    "type": "string"
+                                },
+                                "value": {
+                                    "description": "Digite o contato (n\u00famero de celular, casa e etc)",
+                                    "type": "string"
+                                }
+                            }
+                        }
+                    },
+                    {
+                        "name": "License",
+                        "in": "formData",
+                        "description": "License in PDF, DOCX, JPEG, PNG, GIF max size 3MB",
+                        "required": true,
+                        "type": "file",
+                        "format": "docx,pdf"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Usu\u00e1rio editado com sucesso"
+                    },
+                    "404": {
+                        "description": "Registro n\u00e3o encontrado."
+                    },
+                    "500": {
+                        "description": "Erro ao processar requisi\u00e7\u00e3o."
+                    }
+                }
+            },
+            "post": {
+                "tags": [
+                    "dentist"
+                ],
+                "summary": "Cadastro de Usu\u00e1rio.",
+                "parameters": [
+                    {
+                        "name": "name",
+                        "in": "formData",
+                        "description": "Nome",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "email",
+                        "in": "formData",
+                        "description": "Email",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "cpf",
+                        "in": "formData",
+                        "description": "CPF",
+                        "required": true,
+                        "type": "integer"
+                    },
+                    {
+                        "name": "gender",
+                        "in": "formData",
+                        "description": "Sexo",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "date_of_birth",
+                        "in": "formData",
+                        "description": "Data de anivers\u00e1rio",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "rg",
+                        "in": "formData",
+                        "description": "RG",
+                        "required": true,
+                        "type": "integer"
+                    },
+                    {
+                        "name": "agency",
+                        "in": "formData",
+                        "description": "Ag\u00eancia",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "marital_status",
+                        "in": "formData",
+                        "description": "Estado Civil",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "nationality",
+                        "in": "formData",
+                        "description": "Nacionalidade",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "place_of_birth",
+                        "in": "formData",
+                        "description": "Estado de Nascimento",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "occupation",
+                        "in": "formData",
+                        "description": "Profiss\u00e3o",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "postcode",
+                        "in": "formData",
+                        "description": "CEP",
+                        "required": true,
+                        "type": "integer"
+                    },
+                    {
+                        "name": "address",
+                        "in": "formData",
+                        "description": "Endere\u00e7o",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "number",
+                        "in": "formData",
+                        "description": "N\u00famero",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "secondary_address",
+                        "in": "formData",
+                        "description": "Complemento",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "country",
+                        "in": "formData",
+                        "description": "Pa\u00eds",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "city",
+                        "in": "formData",
+                        "description": "Cidade",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "state",
+                        "in": "formData",
+                        "description": "Estado",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "contact",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "properties": {
+                                "type": {
+                                    "description": "Digite o tipo de contato (celular, casa e etc)",
+                                    "type": "string"
+                                },
+                                "value": {
+                                    "description": "Digite o contato (n\u00famero de celular, casa e etc)",
+                                    "type": "string"
+                                }
+                            }
+                        }
+                    },
+                    {
+                        "name": "License",
+                        "in": "formData",
+                        "description": "License in PDF, DOCX, JPEG, PNG, GIF max size 3MB",
+                        "required": true,
+                        "type": "file",
+                        "format": "docx,pdf"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Registros encontrados."
+                    },
+                    "404": {
+                        "description": "Registro n\u00e3o encontrado."
+                    },
+                    "500": {
+                        "description": "Erro ao processar requisi\u00e7\u00e3o."
+                    }
+                }
+            },
+            "delete": {
+                "tags": [
+                    "dentist"
+                ],
+                "summary": "Exclus\u00e3o de Usu\u00e1rio.",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "header",
+                        "description": "Id de Usu\u00e1rio",
+                        "required": true,
+                        "type": "integer"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Registro exclu\u00eddo."
+                    },
+                    "404": {
+                        "description": "Registro n\u00e3o encontrado."
+                    },
+                    "500": {
+                        "description": "Erro ao processar requisi\u00e7\u00e3o."
+                    }
+                }
+            }
+        },
+        "/dentist/{id}": {
+            "get": {
+                "tags": [
+                    "dentist"
+                ],
+                "summary": "Busca de Usu\u00e1rio por ID.",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "header",
+                        "description": "Id de Usu\u00e1rio",
+                        "required": true,
+                        "type": "integer"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Registros encontrados."
+                    },
+                    "404": {
+                        "description": "Registro n\u00e3o encontrado."
+                    },
+                    "500": {
+                        "description": "Erro ao processar requisi\u00e7\u00e3o."
+                    }
+                }
+            }
+        }
+    },
+    "definitions": {}
+}

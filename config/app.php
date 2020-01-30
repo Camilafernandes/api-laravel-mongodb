@@ -155,6 +155,9 @@ return [
         App\Providers\AuthServiceProvider::class,
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
+        Jenssegers\Mongodb\MongodbServiceProvider::class,
+        L5Swagger\L5SwaggerServiceProvider::class,
+        Waavi\Sanitizer\Laravel\SanitizerServiceProvider::class
 
     ],
 
@@ -201,7 +204,8 @@ return [
         'URL' => Illuminate\Support\Facades\URL::class,
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
-
+        'Moloquent' => Jenssegers\Mongodb\Model::class,
+        'Sanitizer' => Waavi\Sanitizer\Laravel\Facade::class
     ],
 
 ];
